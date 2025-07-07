@@ -28,8 +28,8 @@
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    padding: 0px 20px 20px 20px;
-    gap: min(40px);
+    padding: 0px 20px 0px 20px;
+    gap: 30px;
     color: white;
     background: linear-gradient(to top, #263842, #7da5bd);
 }
@@ -44,7 +44,7 @@
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
     color: whitesmoke;
 }
 .searchBar input{
@@ -73,22 +73,23 @@
         display: none;
     }
 }
-
+.displayBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+}
 .searchBar i{
     align-self: center;
     position: absolute;
     justify-self: flex-end;
     margin-left: min(250px,50%);
 }
-.mainContent{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    gap: 40px;
-}
+
 .mainWeather{
-    height: 200px;
+    height: 180px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -100,11 +101,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
+    width: 50%;
+    gap: 60px;
 }
 
 .mainWeatherLeft1{
     display: flex;
     gap: 10px;
+}
+.mainWeatherLeft img{
+    height: 100px;
+    width: 100px;
+    align-self: flex-start;
 }
 .mainWeatherLeft1 p{
     font-size: 18px;
@@ -113,13 +121,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: end;
 }
-
+.mainWeatherRight2{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
 #temperature{
     font-size: 24px;
 }
 #clouds{
-    text-align: center;
+    text-align: end;
     margin-top: 5px;
 }
 .secondaryWeather{
@@ -193,7 +206,7 @@
     margin-top: 30px;
     margin-bottom: 10px;
 }
-.errorDisplay img{
+#errorDisplay img{
     width: 230px;
     object-fit: contain;
 }

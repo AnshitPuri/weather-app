@@ -25,68 +25,70 @@
           <input type="search" placeholder="Search City" />
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <div class="mainContent" >
-          <div class="mainWeather">
-            <div class="mainWeatherLeft">
-              <div class="mainWeatherLeft1">
-                <i class="fa-solid fa-location-dot"></i>
-                <p id="location"></p>
+        <div class="displayBar">
+          <div class="mainContent" style="display: none">
+            <div class="mainWeather">
+              <div class="mainWeatherLeft">
+                <div class="mainWeatherLeft1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p id="location"></p>
+                </div>
+                <div class="mainWeatherLeft2">
+                  <img src="" alt="weather icon" id="weatherIcon" />
+                </div>
               </div>
-              <div class="mainWeatherLeft2">
-                <img src="" alt="weather icon" id="weatherIcon" />
+              <div class="mainWeatherRight">
+                <div class="mainWeatherRight1">
+                  <p id="dateTime">Wed 07 Aug</p>
+                </div>
+                <div class="mainWeatherRight2">
+                  <p id="temperature">32 C</p>
+                  <p id="clouds">Clouds</p>
+                </div>
               </div>
             </div>
-            <div class="mainWeatherRight">
-              <div class="mainWeatherRight1">
-                <p id="dateTime">Wed 07 Aug</p>
+            <div class="secondaryWeather">
+              <div class="secondaryWeather1">
+                <i class="fa-solid fa-droplet"></i>
+                <p>
+                  Humidity <br />
+                  <span id="humidity"> </span>
+                </p>
               </div>
-              <div class="mainWeatherRight2">
-                <p id="temperature">32 C</p>
-                <p id="clouds">Clouds</p>
+              <div class="secondaryWeather2">
+                <i class="fa-solid fa-wind"></i>
+                <p>
+                  Wind Speed <br />
+                  <span id="windSpeed"> </span>
+                </p>
+              </div>
+            </div>
+            <div class="forecastWeatherMain">
+              <div class="forecastWeather1 forecastWeather">
+                <p id="forecastDate1">Aug 08</p>
+                <p id="forecastTemp1">32 C</p>
+              </div>
+              <div class="forecastWeather2 forecastWeather">
+                <p id="forecastDate2">Aug 08</p>
+                <p id="forecastTemp2">32 C</p>
+              </div>
+              <div class="forecastWeather3 forecastWeather">
+                <p id="forecastDate3">Aug 08</p>
+                <p id="forecastTemp3">32 C</p>
               </div>
             </div>
           </div>
-          <div class="secondaryWeather">
-            <div class="secondaryWeather1">
-              <i class="fa-solid fa-droplet"></i>
-              <p>
-                Humidity <br />
-                <span id="humidity">  </span>
-              </p>
-            </div>
-            <div class="secondaryWeather2">
-              <i class="fa-solid fa-wind"></i>
-              <p>
-                Wind Speed <br />
-                <span id="windSpeed"> </span>
-              </p>
-            </div>
-          </div>
-          <div class="forecastWeatherMain">
-            <div class="forecastWeather1 forecastWeather">
-              <p id="forecastDate1">Aug 08</p>
-              <p id="forecastTemp1">32 C</p>
-            </div>
-            <div class="forecastWeather2 forecastWeather">
-              <p id="forecastDate2">Aug 08</p>
-              <p id="forecastTemp2">32 C</p>
-            </div>
-            <div class="forecastWeather3 forecastWeather">
-              <p id="forecastDate3">Aug 08</p>
-              <p id="forecastTemp3">32 C</p>
-            </div>
-          </div>
-        </div>
 
-        <div class="searchCity otherMessage" style="display: none;">
-          <img src="assets/message/search-city.png" />
-          <h2>Search City</h2>
-          <p>Find out the weather conditions of the city</p>
-        </div>
-        <div class="errorDisplay otherMessage" style="display: none;">
-           <img src="assets/message/not-found.png" />
-          <h2>Search City</h2>
-          <p>Find out the weather conditions of the city</p>
+          <div class="searchCity otherMessage">
+            <img src="assets/message/search-city.png" />
+            <h2>Search City</h2>
+            <p>Find out the weather conditions of the city</p>
+          </div>
+          <div id="errorDisplay" class="otherMessage" style="display: none;">
+            <img src="assets/message/not-found.png" />
+            <h2>Search City</h2>
+            <p>Find out the weather conditions of the city</p>
+          </div>
         </div>
       </div>
     </div>
