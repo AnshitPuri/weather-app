@@ -11,6 +11,9 @@ let city = "Poland"
 let data;
 const mainContainer = document.querySelector('.container')
 
+
+
+
 async function changeWeather() {
     try {
         let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`)
@@ -26,8 +29,9 @@ changeWeather()
 
 function changeToContent() {
     locations.textContent = data.location.country
-    // const iconCode = data.weather[0].icon
-    // weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`
+    const iconCode = data.current.condition.icon
+    weatherIcon.src = `https:${iconCode}`
+    console.log(iconCode)
     const temperatureValue = data.current.heatindex_c
     temperature.textContent = `${temperatureValue} ℃`
     // clouds.textContent = data.current.condition.text
@@ -35,5 +39,18 @@ function changeToContent() {
     humidity.textContent = `${humidityValue} %`
     const windSpeedValue = data.current.wind_kph
     windSpeed.textContent = `${windSpeedValue} K/h`
-    
-}   
+    const date = data.location.localtime
+    let formattedDate = getDate(date);
+    dateTime.textContent = formattedDate
+
+}
+
+function getDate(dateStr) {
+    const date = new Date(dateStr);
+
+    const weekday = date.toLocaleString('default', { weekday: 'short' }); // e.g., Wed
+    const day = date.getDate(); // e.g., 7
+    const month = date.toLocaleString('default', { month: 'short' }); // e.g., Aug
+
+    return `${weekday}, ${day} ${month}`;
+}

@@ -23,18 +23,23 @@
     opacity: 0.9;
 }
 .container{
-    height: 70%;
-    width: min(350px,70%);
+    height: min(70%,700px);
+    width: min(340px,90%);
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 0px 20px 20px 20px;
-    gap: 30px;
+    gap: min(40px);
     color: white;
     background: linear-gradient(to top, #263842, #7da5bd);
 }
+@media (max-height: 800px) {
+    .container{
+        height: 80%;
+    }
+}
 .searchBar{
-    height: 8%;
+    height: 10%;
     width: 100%;
     border-radius: 20px;
     display: flex;
@@ -73,14 +78,14 @@
     align-self: center;
     position: absolute;
     justify-self: flex-end;
-    margin-left: 250px;
+    margin-left: min(250px,50%);
 }
 .mainContent{
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    gap: 30px;
+    gap: 40px;
 }
 .mainWeather{
     height: 200px;
@@ -96,10 +101,7 @@
     justify-content: space-between;
     align-items: start;
 }
-.mainWeatherLeft2 img{
-    height: 150px;
-    width: 200px;
-}
+
 .mainWeatherLeft1{
     display: flex;
     gap: 10px;
@@ -114,7 +116,11 @@
 }
 
 #temperature{
-    font-size: 20px;
+    font-size: 24px;
+}
+#clouds{
+    text-align: center;
+    margin-top: 5px;
 }
 .secondaryWeather{
     height: 15%;
@@ -152,22 +158,23 @@
     font-size: 12px;
 }
 .forecastWeatherMain{
-    height: 30%;
+    height: min(30%,120px);
     width: 100%;
     display: flex;
     gap: 5%;
     padding: 5%;
 }
 .forecastWeather{
-    height: 100%;
-    width: 33%;
+    height: 110%;
+    width: 30%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     border-radius: 10px;
     align-items: center;
+    background-color: #4e646e;
 }
-.otherMessage{
+.otherMessage {
     display: flex;
     flex-direction: column;
     justify-content: center;
