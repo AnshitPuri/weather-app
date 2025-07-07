@@ -1,5 +1,6 @@
 const mainContainer = document.querySelector('.container')
 const displayBar = document.querySelector('.displayBar')
+const searchBar = document.querySelector('#searchBarText')
 const locations = document.querySelector('#location')
 const weatherIcon = document.querySelector('#weatherIcon')
 const dateTime = document.querySelector('#dateTime')
@@ -21,7 +22,7 @@ const forecastImg2 = document.querySelector('#forecastImg2')
 const forecastImg3 = document.querySelector('#forecastImg3')
 
 const apiKey = '553ce1e31384467bb5c70431250707'
-let city = "Delhi"
+let city;
 let data;
 
 
@@ -45,7 +46,17 @@ async function changeWeather() {
         console.error(error)
     }
 }
-changeWeather()
+
+
+function keyvalue(value){
+    if(value.key === 'Enter' && searchBar.value.trim() != "" ){
+        console.log(searchBar.value)
+        city = searchBar.value
+        changeWeather() 
+    }
+}
+
+searchBar.addEventListener("keydown" , keyvalue)
 
 function changeToContent() {
 
