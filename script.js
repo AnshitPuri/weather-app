@@ -35,7 +35,7 @@ const apiKey = '553ce1e31384467bb5c70431250707';
 // ===================
 async function changeWeather(city) {
     try {
-        let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=4&aqi=no&alerts=no`);
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=4&aqi=no&alerts=no`);
         let data = await response.json();
 
         changeToContent(data);
