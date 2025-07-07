@@ -64,6 +64,8 @@ function searchBtnClick(value){
     }
 }
 
+
+
 searchBar.addEventListener("keydown", keyvalue)
 searchBtn.addEventListener("click", searchBtnClick)
 

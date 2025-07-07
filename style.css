@@ -70,10 +70,17 @@
     padding-left: 20px;
     align-self: center;
     font-size: 15px;
+    caret-color: white;
     &::-webkit-search-cancel-button{
         -webkit-appearance: none;
         appearance: none;
         display: none;
+    }
+    &:-webkit-autofill{
+        -webkit-box-shadow: 0 0 0 30px #6a8ea3 inset !important;
+        -webkit-text-fill-color: white !important;
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
     }
 }
 #searchBtn {
