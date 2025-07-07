@@ -43,27 +43,30 @@
     width: 100%;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
     margin-top: 30px;
-    color: whitesmoke;
+    background-color: #6a8ea3;
 }
 .searchBar input{
+    flex: 1;
+    width: auto;
+    min-width: 0;
     border: none;
     height: 100%;
-    width: 100%;
     border-radius: 20px;
-    background-color: #6a8ea3;
     outline: none;
     border: none;
     box-shadow: none;
+    background-color: #6a8ea3;
+    color: white;
 }
 .searchBar input::placeholder{
-    color: rgba(255, 255, 255,1);
+    color: white;
     font-size: 15px;
     align-self: center;
 }
 .searchBar input[type="search"]{
-    color: rgb(255, 255, 255);
+    background-color: #6a8ea3;
+    color: white;
     padding-left: 20px;
     align-self: center;
     font-size: 15px;
@@ -73,6 +76,25 @@
         display: none;
     }
 }
+#searchBtn {
+    align-self: center;
+    color: white;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBtnArea {
+    flex: 0 0 40px; 
+    width: 40px;
+    max-width: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
 .displayBar{
     display: flex;
     flex-direction: column;
@@ -81,14 +103,6 @@
     width: 100%;
     gap: 20px;
 }
-.searchBar i{
-    align-self: center;
-    position: absolute;
-    justify-self: flex-end;
-    margin-left: min(250px,50%);
-    color: white;
-}
-
 .mainWeather{
     height: 180px;
     width: 100%;
