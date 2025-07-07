@@ -1,6 +1,7 @@
 const mainContainer = document.querySelector('.container')
 const displayBar = document.querySelector('.displayBar')
 const searchBar = document.querySelector('#searchBarText')
+const searchBtn = document.querySelector('#searchBtn')
 const locations = document.querySelector('#location')
 const weatherIcon = document.querySelector('#weatherIcon')
 const dateTime = document.querySelector('#dateTime')
@@ -22,21 +23,22 @@ const forecastImg2 = document.querySelector('#forecastImg2')
 const forecastImg3 = document.querySelector('#forecastImg3')
 
 const apiKey = '553ce1e31384467bb5c70431250707'
-let city;
-let data;
 
 
 
-async function changeWeather() {
+
+async function changeWeather(city) {
     try {
 
         let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=4&aqi=no&alerts=no `)
-        data = await response.json()
-        changeToContent()
+
+        let data = await response.json()
+
+        changeToContent(data)
         searchCity.style.cssText = "display: none";
         mainContent.style.cssText = 'display: contents'
         displayBar.replaceChildren(mainContent)
-        console.log(data)
+
 
     } catch (error) {
 
@@ -48,17 +50,24 @@ async function changeWeather() {
 }
 
 
-function keyvalue(value){
-    if(value.key === 'Enter' && searchBar.value.trim() != "" ){
-        console.log(searchBar.value)
+function keyvalue(value) {
+    if (value.key === 'Enter' && searchBar.value.trim() != "") {
         city = searchBar.value
-        changeWeather() 
+        changeWeather(city)
     }
 }
 
-searchBar.addEventListener("keydown" , keyvalue)
+function searchBtnClick(value){
+    if (searchBar.value.trim() != "") {
+        city = searchBar.value
+        changeWeather(city)
+    }
+}
 
-function changeToContent() {
+searchBar.addEventListener("keydown", keyvalue)
+searchBtn.addEventListener("click", searchBtnClick)
+
+function changeToContent(data) {
 
     locations.textContent = data.location.name
 
@@ -66,15 +75,13 @@ function changeToContent() {
 
     weatherIcon.src = `https:${iconCode}`
 
-    console.log(iconCode)
-
     const temperatureValue = data.current.heatindex_c
 
     temperature.textContent = `${temperatureValue} ℃`
 
     const cloudinitial = data.current.condition.text
 
-    const cloudValue = cloudinitial.split(" ").slice(0,2).join(" ")
+    const cloudValue = cloudinitial.split(" ").slice(0, 2).join(" ")
     clouds.textContent = cloudValue
 
     const humidityValue = data.current.humidity
@@ -91,15 +98,15 @@ function changeToContent() {
 
     dateTime.textContent = formattedDate
 
-    const forecastTemp1value =  data.forecast.forecastday[1].day.avgtemp_c
+    const forecastTemp1value = data.forecast.forecastday[1].day.avgtemp_c
 
     forecastTemp1.textContent = `${forecastTemp1value} ℃ `
 
-    const forecastTemp2value =  data.forecast.forecastday[2].day.avgtemp_c
+    const forecastTemp2value = data.forecast.forecastday[2].day.avgtemp_c
 
     forecastTemp2.textContent = `${forecastTemp2value} ℃ `
 
-    const forecastTemp3value =  data.forecast.forecastday[3].day.avgtemp_c
+    const forecastTemp3value = data.forecast.forecastday[3].day.avgtemp_c
 
     forecastTemp3.textContent = `${forecastTemp3value} ℃ `
 
