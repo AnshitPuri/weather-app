@@ -31,7 +31,7 @@ async function changeWeather(city) {
     try {
         let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=4&aqi=no&alerts=no`);
         let data = await response.json();
-
+        console.log(data);
         changeToContent(data);
         searchCity.style.cssText = "display: none";
         mainContent.style.cssText = 'display: contents';
@@ -66,7 +66,10 @@ searchBtn.addEventListener("click", searchBtnClick);
 
 function changeToContent(data) {
 
-    locations.textContent = data.location.name;
+    let region = data.location.name;
+    let country = data.location.country;
+    locations.textContent = `${region}, ${country}`;
+    locations.style.cssText = "text-transform: capitalize;  font-weight: 600; color: #fff;";
     weatherIcon.src = `https:${data.current.condition.icon}`;
     temperature.textContent = `${data.current.heatindex_c} ℃`;
     clouds.textContent = data.current.condition.text.split(" ").slice(0, 2).join(" ");
