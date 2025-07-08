@@ -1,6 +1,4 @@
-// ===================
-// DOM ELEMENTS
-// ===================
+
 const mainContainer = document.querySelector('.container');
 const displayBar = document.querySelector('.displayBar');
 const searchBar = document.querySelector('#searchBarText');
@@ -25,14 +23,10 @@ const forecastImg1 = document.querySelector('#forecastImg1');
 const forecastImg2 = document.querySelector('#forecastImg2');
 const forecastImg3 = document.querySelector('#forecastImg3');
 
-// ===================
-// CONSTANTS
-// ===================
+
 const apiKey = '553ce1e31384467bb5c70431250707';
 
-// ===================
-// MAIN WEATHER FETCH & DISPLAY
-// ===================
+
 async function changeWeather(city) {
     try {
         let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=4&aqi=no&alerts=no`);
@@ -50,9 +44,6 @@ async function changeWeather(city) {
     }
 }
 
-// ===================
-// EVENT HANDLERS
-// ===================
 function keyvalue(event) {
     if (event.key === 'Enter' && searchBar.value.trim() !== "") {
         const city = searchBar.value;
@@ -67,17 +58,14 @@ function searchBtnClick() {
     }
 }
 
-// ===================
-// EVENT LISTENERS
-// ===================
+
 searchBar.addEventListener("keydown", keyvalue);
 searchBtn.addEventListener("click", searchBtnClick);
 
-// ===================
-// UI UPDATE FUNCTIONS
-// ===================
+
+
 function changeToContent(data) {
-    // Main weather
+
     locations.textContent = data.location.name;
     weatherIcon.src = `https:${data.current.condition.icon}`;
     temperature.textContent = `${data.current.heatindex_c} ℃`;
@@ -86,7 +74,6 @@ function changeToContent(data) {
     windSpeed.textContent = `${data.current.wind_kph} K/h`;
     dateTime.textContent = getDate(data.location.localtime);
 
-    // Forecast
     forecastTemp1.textContent = `${data.forecast.forecastday[1].day.avgtemp_c} ℃ `;
     forecastTemp2.textContent = `${data.forecast.forecastday[2].day.avgtemp_c} ℃ `;
     forecastTemp3.textContent = `${data.forecast.forecastday[3].day.avgtemp_c} ℃ `;
@@ -100,9 +87,7 @@ function changeToContent(data) {
     forecastImg3.src = `http:${data.forecast.forecastday[3].day.condition.icon}`;
 }
 
-// ===================
-// UTILITY FUNCTIONS
-// ===================
+
 function getDate(dateStr) {
     const date = new Date(dateStr);
     const weekday = date.toLocaleString('default', { weekday: 'short' });

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- ===================
-         META & LINKS
-    =================== -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
@@ -22,27 +19,16 @@
     />
   </head>
   <body>
-    <!-- ===================
-         MAIN CONTAINER
-    =================== -->
     <div class="mainContainer">
       <div class="container">
-        <!-- ===================
-             SEARCH BAR
-        =================== -->
         <div class="searchBar">
-          <input type="search" placeholder="Search City" id="searchBarText"/>
+          <input type="search" placeholder="Search City" id="searchBarText" />
           <div class="searchBtnArea">
             <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
           </div>
         </div>
-        <!-- ===================
-             DISPLAY BAR
-        =================== -->
+
         <div class="displayBar">
-          <!-- ===================
-               MAIN CONTENT (Weather Info)
-          =================== -->
           <div class="mainContent" style="display: none">
             <div class="mainWeather">
               <div class="mainWeatherLeft">
@@ -83,33 +69,41 @@
             <div class="forecastWeatherMain">
               <div class="forecastWeather1 forecastWeather">
                 <p id="forecastDate1">Aug 08</p>
-                <img class="forecastImg"  id="forecastImg1" alt="forecast icon">
+                <img
+                  class="forecastImg"
+                  id="forecastImg1"
+                  alt="forecast icon"
+                />
                 <p id="forecastTemp1">32 C</p>
               </div>
               <div class="forecastWeather2 forecastWeather">
                 <p id="forecastDate2">Aug 08</p>
-                <img class="forecastImg"  id="forecastImg2" alt="forecast icon">
+                <img
+                  class="forecastImg"
+                  id="forecastImg2"
+                  alt="forecast icon"
+                />
                 <p id="forecastTemp2">32 C</p>
               </div>
               <div class="forecastWeather3 forecastWeather">
                 <p id="forecastDate3">Aug 08</p>
-                <img class="forecastImg" id="forecastImg3" alt="forecast icon">
+                <img
+                  class="forecastImg"
+                  id="forecastImg3"
+                  alt="forecast icon"
+                />
                 <p id="forecastTemp3">32 C</p>
               </div>
             </div>
           </div>
-          <!-- ===================
-               SEARCH PROMPT
-          =================== -->
+
           <div class="searchCity otherMessage">
             <img src="assets/message/search-city.png" />
             <h2>Search City</h2>
             <p>Find out the weather conditions of the city</p>
           </div>
-          <!-- ===================
-               ERROR DISPLAY
-          =================== -->
-          <div id="errorDisplay" class="otherMessage" style="display: none;">
+
+          <div id="errorDisplay" class="otherMessage" style="display: none">
             <img src="assets/message/not-found.png" />
             <h2>Search City</h2>
             <p>Find out the weather conditions of the city</p>
@@ -117,10 +111,7 @@
         </div>
       </div>
     </div>
-    
-    <!-- ===================
-         SCRIPTS
-    =================== -->
+
     <script src="script.js"></script>
   </body>
 </html>
