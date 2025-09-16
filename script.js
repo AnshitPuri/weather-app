@@ -24,7 +24,7 @@ const forecastImg2 = document.querySelector('#forecastImg2');
 const forecastImg3 = document.querySelector('#forecastImg3');
 
 
-const apiKey = 'da55542edb4b461cba5105135252507';
+const apiKey = 'cd099a8690114acfb68180842251609';
 
 
 async function changeWeather(city) {
